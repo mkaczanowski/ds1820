@@ -1,0 +1,18 @@
+{
+  "host": "0.0.0.0",
+  "port": 8888,
+  "db_path": "test.db",
+  "db_update_rate_secs": 10,
+  "email_send_rate_secs": 600,
+  "email_recipient": "test@test.com",
+  "temperature_scale": 0,
+  "sensors_range": {
+	"min": -5,
+	"max": 17
+  },
+  "sensors": [
+	"/sys/bus/w1/devices/28-0000035f5e27/w1_slave",
+	"/sys/bus/w1/devices/28-0000035f5e27/w1_slave",
+	"/sys/bus/w1/devices/28-0000035f5e27/w1_slave"
+  ]
+}
