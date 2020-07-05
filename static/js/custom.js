@@ -46,12 +46,12 @@ function getSensorInfo(settings, sensor, limit){
             $.each(data, function(i){
                 if(i == 0) return;
                 var date = new Date(data[i].timestamp*1000);
-                history.push("<li><span>"+date.getHours()+":"+date.getMinutes()+"</span><strong>"+data[i].temperature+"&deg;</strong></li>");
+                history.push("<li><span>"+date.getHours()+":"+date.getMinutes()+"</span><strong>"+data[i].temperature.toFixed(2)+"&deg;</strong></li>");
             });
 
             var rendered = elem
                 .replace(/\{sensor\}/g, normalized_sensor)
-                .replace(/\{sensor_temp\}/g, data[0].temperature)
+                .replace(/\{sensor_temp\}/g, data[0].temperature.toFixed(2))
                 .replace(/\{sensor_data\}/g, history.join(" "))
                 .replace(/\{symbol\}/g, settings.temperature_scale == 0 ? "&deg;" : "&#8457;")
                 .replace(/\{icon\}/g, online ? "sunny" : "cold")
