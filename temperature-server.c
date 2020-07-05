@@ -11,15 +11,10 @@
 #include <pthread.h>
 #include <sqlite3.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <sys/mman.h>
 #include <sys/select.h>
-#include <sys/socket.h>
 #include <sys/stat.h>
-#include <sys/types.h>
-#include <time.h>
-#include <unistd.h>
 
 #define POST_BUFFER_SIZE 512
 #define MAX_NAME_SIZE 1024
