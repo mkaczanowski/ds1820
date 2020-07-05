@@ -2,93 +2,87 @@
 <html>
     <head>
         <title>nativeDroid - Theme for jQuery Mobile</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		
-	<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
         <link rel="stylesheet" href="css/font-awesome.min.css" />
 
-	<!-- jQueryMobileCSS - original without styling -->
-       	<link rel="stylesheet" href="css/jquerymobile.css" />
+        <!-- jQueryMobileCSS - original without styling -->
+        <link rel="stylesheet" href="css/jquerymobile.css" />
 
-	<!-- nativeDroid core CSS -->
+        <!-- nativeDroid core CSS -->
         <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
 
-	<!-- nativeDroid: Light/Dark -->
+        <!-- nativeDroid: Light/Dark -->
         <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
 
-	<!-- nativeDroid: Color Schemes -->
+        <!-- nativeDroid: Color Schemes -->
         <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.green.css" id='jQMnDColor' />
 
-	<!-- jQuery / jQueryMobile Scripts -->
-	<script src="js/jquery-1.9.1.min.js"></script>
+        <!-- jQuery / jQueryMobile Scripts -->
+        <script src="js/jquery-1.9.1.min.js"></script>
         <script src="js/jquery.mobile-1.3.1.min.js"></script>
         <script src="js/customForms.js"></script>
     </head>
     <body>
-        
-    <div data-role="page" data-theme='b'>
 
+        <div data-role="page" data-theme='b'>
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+                <a href="index.html" data-ajax="false"><i class='icon-ellipsis-vertical'></i></a>
+                <h1>Configuration</h1>
+            </div>
 
-        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
-            <a href="index.html" data-ajax="false"><i class='icon-ellipsis-vertical'></i></a>
-            <h1>Configuration</h1>
-        </div>
-        
-        <div data-role="content">   
-
-			    
-            <form id="settings">
-                <ul data-role="listview" data-inset="true">
-		    <li data-role="fieldcontain">
-				<label for="scale">Scale:</label>
-				<select name="scale" id="scale" data-role="slider" data-theme="a">
-					<option value="0">Celcius</option>
-					<option value="1">Farenheit</option>
-				</select> 
-		    </li>
-		    <li data-role="fieldcontain">
-			<label for="basic">Host:</label>
-			<input type="text" name="name" id="host" value=""  />
-		    </li>
-		    <li data-role="fieldcontain">
-			<label for="basic">Port:</label>
-			<input type="text" name="name" id="port" value=""  />
-		    </li>
-		    <li data-role="fieldcontain">
-			<label for="basic">Recipient:</label>
-			<input type="text" name="name" id="recipient" value=""  />
-		    </li>
-                    <li data-role="fieldcontain">
-                        <div id="rangeslider" data-role='rangeslider'>
-                            <label for='rangeslider1a'>Temperature alarm:</label>
+            <div data-role="content">   
+                <form id="settings">
+                    <ul data-role="listview" data-inset="true">
+                        <li data-role="fieldcontain">
+                            <label for="scale">Scale:</label>
+                            <select name="scale" id="scale" data-role="slider" data-theme="a">
+                                <option value="0">Celcius</option>
+                                <option value="1">Farenheit</option>
+                            </select> 
+                        </li>
+                        <li data-role="fieldcontain">
+                            <label for="basic">Host:</label>
+                            <input type="text" name="name" id="host" value=""  />
+                        </li>
+                        <li data-role="fieldcontain">
+                            <label for="basic">Port:</label>
+                            <input type="text" name="name" id="port" value=""  />
+                        </li>
+                        <li data-role="fieldcontain">
+                            <label for="basic">Recipient:</label>
+                            <input type="text" name="name" id="recipient" value=""  />
+                        </li>
+                        <li data-role="fieldcontain">
+                            <div id="rangeslider" data-role='rangeslider'>
+                                <label for='rangeslider1a'>Temperature alarm:</label>
                                 <input type='range' name='range1a' id='range1a' min='-10' max='40' value='0'>
-                            <label for='rangeslider1b'>RangeSlider:</label>
+                                <label for='rangeslider1b'>RangeSlider:</label>
                                 <input type='range' name='range1b' id='range1b' min='-10' max='40' value='0'>
-                        </div>
-                    </li>
-                    <li data-role="fieldcontain">
-                        <div id="rangeslider2" data-role='rangeslider'>
-                            <label for='rangeslider1c'>Notify every (min):</label>
+                            </div>
+                        </li>
+                        <li data-role="fieldcontain">
+                            <div id="rangeslider2" data-role='rangeslider'>
+                                <label for='rangeslider1c'>Notify every (min):</label>
                                 <input type='range' name='range1a' id='range1c' min='1' max='360' data-highlight='true' value='5'>
-                        </div>
-                    </li>
-                    <li data-role="fieldcontain">
-                        <div id="rangeslider3" data-role='rangeslider'>
-                            <label for='rangeslider1d'>Sensor check every (sec):</label>
+                            </div>
+                        </li>
+                        <li data-role="fieldcontain">
+                            <div id="rangeslider3" data-role='rangeslider'>
+                                <label for='rangeslider1d'>Sensor check every (sec):</label>
                                 <input type='range' name='range1a' id='range1d' min='1' max='360' data-highlight='true' value='5'>
-                        </div>
-                    </li>
-                    <li>
-                        <fieldset class="ui-grid-a">
+                            </div>
+                        </li>
+                        <li>
+                            <fieldset class="ui-grid-a">
                                 <div class="ui-block-a"><button type="submit" data-theme="b">Cancel</button></div>
                                 <div class="ui-block-b"><button type="submit" data-theme="b">Submit</button></div>
-                        </fieldset>
-                    </li>
-                </ul>
-            </form>
+                            </fieldset>
+                        </li>
+                    </ul>
+                </form>
+            </div>
         </div>
-
-    </div>
-    
     </body>
 </html>
