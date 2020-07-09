@@ -21,7 +21,7 @@ struct json_object* get_temp_action(sqlite3* db, temperature_t format,
                                json_object_new_int(temps[0].timestamp));
         json_object_object_add(jobj, "sensor", json_object_new_string(sensor));
 
-        double temp = temps[0].temperature;
+        double temp = temps[i].temperature;
         if (format == FARENHEIT) {
             temp = (temp * (9.0 / 5.0)) + 32;
         }
