@@ -8,9 +8,9 @@ The project describes how to build a leightweight C HTTP server (based on [libmi
 In addition to the above, I described the process of wiring and system setup with [BeagleBone Black](http://beagleboard.org/bone "BeagleBone Black") board.
 
 ## Wiring
-The ARM board communicates with the sensors via [1-wire serial protocol](https://www.maximintegrated.com/en/design/technical-documents/tutorials/1/1796.html "1-wire serial protocol") that supports multiple devices on one data line. To enable the driver, we'll have to instruct the kernel about physical wiring, so that you should make sure the correct GPIO pin is present in the DTS (device tree source) file.
+The ARM board communicates with the sensors via [1-wire serial protocol](https://www.maximintegrated.com/en/design/technical-documents/tutorials/1/1796.html "1-wire serial protocol") that supports multiple devices on one data line. To enable the driver, we'll have to instruct the kernel about physical wiring, so you should make sure the correct GPIO pin is present in the DTS (device tree source) file.
 
-The figure below presents example setup for BeagleBone Black board (P9.22 GPIO pin, 4.7 kOhm resistor), but can also be easily shared with other boards (ie. Arduino):
+The figure below presents example setup specifically for BeagleBone Black board (P9.22 GPIO pin, 4.7 kOhm resistor), but it should also work for other prototype boards (ie. Arduino):
 
 [![](http://mkaczanowski.com/wp-content/uploads/2015/01/beagle-1-1024x675.png)](http://mkaczanowski.com/wp-content/uploads/2015/01/beagle-1.png)
 
@@ -24,7 +24,7 @@ $ dtc -O dtb -o dts/BB-W1-00A0.dtbo -b 0 -@ BB-W1-00A0.dts
 $ cp BB-W1-00A0.dtbo /lib/firmware/
 ```
 
-Now, the `dtbo` file needs to be loaded at the boot time, so we need to enable it in the U-Boot configuration.
+Now, the `dtbo` file needs to be loaded via U-Boot:
 ```shell
 $ echo "enable_uboot_overlays=1" >> /boot/uEnv.txt
 $ echo "uboot_overlay_addr4=/lib/firmware/BB-W1-00A0.dtbo" >> /boot/uEnv.txt
@@ -36,7 +36,7 @@ $ ls /sys/bus/w1/devices/
 28-0000035f5e27  28-000004b58c5d  w1_bus_master1
 ```
 
-Note that the U-Boot configuration is tightly coupled with the BeagleBone Black official Debian image and likely won't be the same on other systems. I
+Note that the U-Boot configuration is tightly coupled with the BeagleBone Black official Debian image and likely won't be the same on other systems.
 
 ## Building
 It's a standard CMake project, so everything should build smoothly. However dependencies such as `libmicrohttpd` or `sqlite3` must be installed manually (via apt).
@@ -69,7 +69,7 @@ The server is configured via JSON config, where you have to update sensors sysfs
 }
 ```
 
-Eventually, the server is running:
+Spawn up the server:
 ```shell
 $ ./temperature-server ../config.json
 ```
