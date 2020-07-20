@@ -15,6 +15,7 @@ addons:
       - libjson-c2
       - cmake
 script:
+  - ln -s /usr/lib/x86_64-linux-gnu/libmicrohttpd.so.10 /usr/lib/x86_64-linux-gnu/libmicrohttpd.so
   - mkdir build && cd build
   - cmake ../
   - make
