@@ -24,4 +24,5 @@ target_link_libraries(
     temperature-server
     ${SQLITE3_LIBRARIES}
     json-c
+    microhttpd
 )
