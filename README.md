@@ -1,3 +1,7 @@
+[![Build Status][travis-badge]][travis]
+
+[travis-badge]: https://travis-ci.org/mkaczanowski/ds1820.svg?branch=master
+
 # ds1820
 The project describes how to build a leightweight C HTTP server (based on [libmicrohttpd](http://www.gnu.org/software/libmicrohttpd/ "libmicrohttpd")) that:
 * periodically collects temperature via [DS182B20](https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf "DS182B20") sensors
