@@ -1,6 +1,5 @@
 #include "action.h"
 #include "../sqlite/temp.h"
-#include <libconfig.h>
 #include <sqlite3.h>
 #include <stdio.h>
 #include <stdlib.h>
