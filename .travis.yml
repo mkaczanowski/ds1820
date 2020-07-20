@@ -8,8 +8,11 @@ addons:
     packages:
       - gcc
       - libmicrohttpd-dev
+      - libmicrohttpd10
       - libsqlite3-dev
+      - sqlite3
       - libjson-c-dev
+      - libjson-c2
       - cmake
 script:
   - mkdir build && cd build
