@@ -1,0 +1,20 @@
+sudo: required
+language:
+  - cpp
+compiler:
+  - gcc
+addons:
+  apt:
+    packages:
+      - gcc
+      - libmicrohttpd-dev
+      - libmicrohttpd
+      - libsqlite3-dev
+      - libsqlite3
+      - libjson-c-dev
+      - libjson-c
+      - cmake
+script:
+  - mkdir build && cd build
+  - cmake ../
+  - make
