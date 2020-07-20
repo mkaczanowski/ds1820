@@ -1,6 +1,7 @@
 [![Build Status][travis-badge]][travis]
 
 [travis-badge]: https://travis-ci.org/mkaczanowski/ds1820.svg?branch=master
+[travis]: https://travis-ci.org/mkaczanowski/ds1820/
 
 # ds1820
 The project describes how to build a leightweight C HTTP server (based on [libmicrohttpd](http://www.gnu.org/software/libmicrohttpd/ "libmicrohttpd")) that:
