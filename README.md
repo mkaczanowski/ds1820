@@ -25,7 +25,7 @@ Not so recently, kernel overlays have been deprecated, so anything that depends 
 At first we need to compile the DTS file:
 ```shell
 $ git clone https://github.com/mkaczanowski/ds1820
-$ dtc -O dtb -o dts/BB-W1-00A0.dtbo -b 0 -@ BB-W1-00A0.dts 
+$ cd dts && dtc -O dtb -o BB-W1-00A0.dtbo -b 0 -@ BB-W1-00A0.dts 
 $ cp BB-W1-00A0.dtbo /lib/firmware/
 ```
 
@@ -37,6 +37,8 @@ $ echo "uboot_overlay_addr4=/lib/firmware/BB-W1-00A0.dtbo" >> /boot/uEnv.txt
 
 If all goes right, after the reboot you should see sensors exposed via sysfs:
 ```shell
+$ modprobe wire
+$ modprobe w1-gpio
 $ ls /sys/bus/w1/devices/
 28-0000035f5e27  28-000004b58c5d  w1_bus_master1
 ```
